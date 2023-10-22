@@ -10,18 +10,27 @@ animations = [{
 "texture": ExtResource("1_gsvus")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gsvus")
+}],
+"loop": true,
+"name": &"walk",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdd7f"]
-size = Vector2(64, 64)
+size = Vector2(64, 128)
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_uc7dm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jc2n4")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vdd7f")
