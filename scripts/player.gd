@@ -1,5 +1,7 @@
 extends Area2D
 
+signal hit
+
 @export var speed = 400
 var screen_size
 
@@ -20,6 +22,13 @@ func _process(delta):
 	if Input.is_action_pressed("move_down"):
 		velocity.y -= 1
 
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		$animatedSprite2D.play()
+	else:
+		$animatedSprite2D.stop()
 	
 	
-	pass
+
+	position += velocity * delta
+	position = position.clamp(Vector2.ZERO, screen_size)
