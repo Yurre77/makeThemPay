@@ -3,6 +3,7 @@ extends Area2D
 signal hit
 
 @export var speed = 400
+@export var gravity = 9.81
 var screen_size
 
 # Called when the node enters the scene tree for the first time.
@@ -30,6 +31,8 @@ func _process(delta):
 		velocity.y += 1
 	if Input.is_action_pressed("move_down"):
 		velocity.y -= 1
+
+	velocity -= gravity
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
