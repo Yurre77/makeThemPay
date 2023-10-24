@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfq3va8yfkqlx"]
+[gd_scene load_steps=3 format=3 uid="uid://cfq3va8yfkqlx"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ghunl"]
 
 [sub_resource type="Curve2D" id="Curve2D_qo6c6"]
 _data = {
@@ -7,6 +9,7 @@ _data = {
 point_count = 5
 
 [node name="Main" type="Node"]
+script = ExtResource("1_ghunl")
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
