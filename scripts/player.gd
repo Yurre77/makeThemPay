@@ -5,7 +5,6 @@ signal hit
 @export var speed = 400
 var screen_size
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
 
@@ -14,7 +13,6 @@ func _on_body_entered(body):
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 
 	var velocity = Vector2.ZERO
