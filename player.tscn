@@ -26,7 +26,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdd7f"]
-size = Vector2(64, 128)
+size = Vector2(64, 64)
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_uc7dm")
