@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsdkum444v10q"]
+[gd_scene load_steps=5 format=3 uid="uid://dsdkum444v10q"]
 
+[ext_resource type="Script" path="res://scripts/mob.gd" id="1_5a15q"]
 [ext_resource type="Texture2D" uid="uid://c30mw50qf8dyl" path="res://assets/mobs/mob1/Mob1_idle.png" id="1_075f4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0mb0"]
@@ -27,6 +28,7 @@ size = Vector2(48, 48)
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
+script = ExtResource("1_5a15q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
