@@ -9,7 +9,15 @@ animations = [{
 "texture": ExtResource("1_075f4")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_075f4")
+}],
+"loop": true,
+"name": &"Moving",
 "speed": 5.0
 }]
 
@@ -23,6 +31,7 @@ gravity_scale = 0.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_k0mb0")
+animation = &"Moving"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9.53674e-07, 9.53674e-07)
