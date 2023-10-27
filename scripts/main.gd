@@ -6,11 +6,7 @@ var score
 func _ready():
 	new_game()
 	pass
-
-
-func _process(delta):
-	pass
-
+	
 
 func game_over():
 	$ScoreTimer.stop()
