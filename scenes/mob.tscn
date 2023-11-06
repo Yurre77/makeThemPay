@@ -1,16 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsdkum444v10q"]
+[gd_scene load_steps=7 format=3 uid="uid://dsdkum444v10q"]
 
 [ext_resource type="Script" path="res://scripts/mob.gd" id="1_5a15q"]
 [ext_resource type="Texture2D" uid="uid://webpie0j2rs7" path="res://assets/mobs/slimes/redSlime/redSlimeIdle1.png" id="2_ylg8s"]
 [ext_resource type="Texture2D" uid="uid://dcovym8kfkr40" path="res://assets/mobs/slimes/redSlime/redSlimeIdle2.png" id="3_1850j"]
 [ext_resource type="Texture2D" uid="uid://dd1236mbjv451" path="res://assets/mobs/slimes/redSlime/redSlimeIdle3.png" id="4_bn0pj"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rycd1"]
-load_path = "res://.godot/imported/Mob1_idle.png-f17d60d5c47716b2411567a47aa2f984.ctex"
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0mb0"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bn0pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1850j")
+}, {
 "duration": 1.0,
 "texture": ExtResource("2_ylg8s")
 }, {
@@ -19,21 +22,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_bn0pj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_1850j")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_rycd1")
-}],
-"loop": true,
-"name": &"Moving",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mko4u"]
@@ -49,7 +41,7 @@ script = ExtResource("1_5a15q")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k0mb0")
 animation = &"Idle"
-frame_progress = 0.504936
+frame_progress = 0.628545
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.999999, 21)
