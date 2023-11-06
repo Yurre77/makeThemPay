@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsdkum444v10q"]
 
 [ext_resource type="Script" path="res://scripts/mob.gd" id="1_5a15q"]
-[ext_resource type="Texture2D" uid="uid://c30mw50qf8dyl" path="res://assets/mobs/mob1/Mob1_idle.png" id="1_075f4"]
+[ext_resource type="Texture2D" uid="uid://c30mw50qf8dyl" path="res://assets/mobs/slimes/Mob1_idle.png" id="2_wh4p8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0mb0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_075f4")
+"texture": ExtResource("2_wh4p8")
 }],
 "loop": true,
 "name": &"Idle",
@@ -15,7 +15,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_075f4")
+"texture": ExtResource("2_wh4p8")
 }],
 "loop": true,
 "name": &"Moving",
