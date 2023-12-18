@@ -6,6 +6,7 @@ var tile_size = 32
 var num_rooms = 50
 var min_size = 4
 var max_size = 10
+var hSpread = 400
 
 func _ready():
 	randomize()
@@ -13,7 +14,7 @@ func _ready():
 
 func make_rooms():
 	for i in range(num_rooms):
-		var pos = Vector2(0,0)
+		var pos = Vector2(randf_range(-hSpread, hSpread),0)
 		var r = Room.instantiate()
 		var w = min_size + randi() % (max_size - min_size)
 		var h = min_size + randi() % (max_size - min_size)
