@@ -7,4 +7,4 @@ func make_room(_pos, _size):
 	size = _size
 	var s = RectangleShape2D.new()
 	s.size = size
-	$CollisionShap2D.shape = s
+	$CollisionShape2D.shape = s
