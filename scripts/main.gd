@@ -1,46 +1,21 @@
-extends Node
+extends Node2D
 
-@export var mob_scene : PackedScene
-var score
+var Room = preload("res://room.tscn")
+
+var tile_size = 32
+var num_rooms = 20
+var min_size = 4
+var max_size = 10
 
 func _ready():
-	new_game()
-	pass
-	
+	randomize()
+	make_rooms()
 
-func game_over():
-	$ScoreTimer.stop()
-	$MobTimer.stop()
-
-
-func new_game():
-	score = 0
-	$Player.start($StartPosition.position)
-	$StartTimer.start()
-
-
-func _on_score_timer_timeout():
-	score += 1
-	
-func _on_start_timer_timeout():
-	$MobTimer.start()
-	$ScoreTimer.start()
-
-
-func _on_mob_timer_timeout():
-	var mob = mob_scene.instantiate()
-	
-	var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
-	mob_spawn_location.progress_ratio = randf()
-	
-	var direction = mob_spawn_location.rotation + PI / 2
-	
-	mob.position = mob_spawn_location.position
-	
-	direction += randf_range(-PI / 4, PI / 4)
-	mob.rotation = direction
-	
-	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
-	mob.linear_velocity = velocity.rotated(direction)
-	
-	add_child(mob)
+func make_rooms():
+	for i in range(num_rooms):
+		var pos = Vector2(0,0)
+		var r = Room.instantiate()
+		var w = min_size + randi() % (max_size - min_size)
+		var h = min_size + randi() % (max_size - min_size)
+		r.make_room(pos, Vector2(w,h) * tile_size)
+		$Rooms.add_child(r)
