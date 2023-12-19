@@ -7,6 +7,7 @@ var num_rooms = 50
 var min_size = 4
 var max_size = 10
 var hSpread = 400
+var cull = 0.5
 
 func _ready():
 	randomize()
@@ -20,6 +21,14 @@ func make_rooms():
 		var h = min_size + randi() % (max_size - min_size)
 		r.make_room(pos, Vector2(w, h) * tile_size)
 		$Rooms.add_child(r)
+	#wait for movement to stop
+	await(get_tree().create_timer(1.1).timeout)
+	#cull rooms
+	for room in $Rooms.get_children():
+		if randf() < cull:
+			room.queue_free()
+		else:
+			room.freeze = true
 
 func _draw():
 	for room in $Rooms.get_children():

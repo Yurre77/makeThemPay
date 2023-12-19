@@ -1,27 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://co4fhmdv360qs"]
+[gd_scene load_steps=4 format=3 uid="uid://co4fhmdv360qs"]
 
 [ext_resource type="Script" path="res://scripts/mobs/redSlime.gd" id="1_moxtb"]
-[ext_resource type="Texture2D" path="res://assets/mobs/slimes/redSlime/redSlimeIdle3.png" id="2_pl0ip"]
-[ext_resource type="Texture2D" path="res://assets/mobs/slimes/redSlime/redSlimeIdle2.png" id="3_s01kh"]
-[ext_resource type="Texture2D" path="res://assets/mobs/slimes/redSlime/redSlimeIdle1.png" id="4_omhum"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0mb0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pl0ip")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_s01kh")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_omhum")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_s01kh")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_pl0ip")
+"texture": null
 }],
 "loop": true,
 "name": &"Idle",
@@ -29,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pl0ip")
+"texture": null
 }],
 "loop": true,
 "name": &"Move",
