@@ -68,13 +68,13 @@ func find_mst(nodes):
 		var p = null
 		#loop through points
 		for p1 in path.get_point_ids():
-			p1 = path.get_point_position(p1)
+			var p_temp = path.get_point_position(p1)
 			#loop through the rest
 			for p2 in nodes:
-				if p1.distance_to(p2) < min_dist:
-					min_dist = p1.distance_to(p2)
+				if p_temp.distance_to(p2) < min_dist:
+					min_dist = p_temp.distance_to(p2)
 					min_p = p2
-					p = p1
+					p = p_temp
 
 		var n = path.get_available_point_id()
 		path.add_point(n, min_p)
