@@ -45,7 +45,7 @@ func _draw():
 			for c in path.get_point_connections(p):
 				var pp = path.get_point_position(p)
 				var cp = path.get_point_position(c)
-				draw_line(pp, cp, color(1,1,0), 15, true)
+				draw_line(pp, cp, Color(1,1,0), 15, true)
 
 func _process(delta):
 	queue_redraw()
