@@ -39,7 +39,7 @@ func make_rooms():
 
 func _draw():
 	for room in $Rooms.get_children():
-		draw_rect(Rect2(room.position - room.size, room.size * 2), Color(0,1, 0), false)
+		draw_rect(Rect2(room.position - room.size, room.size * 2), Color(0,1,0), false)
 	if path:
 		for p in path.get_point_ids():
 			for c in path.get_point_connections(p):
