@@ -54,6 +54,7 @@ func _input(event):
 	if event.is_action_pressed('ui_select'):
 		for n in $Rooms.get_children():
 			n.queue_free()
+		path = null
 		make_rooms()
 
 func find_mst(nodes):
