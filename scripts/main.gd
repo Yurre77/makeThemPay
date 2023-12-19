@@ -9,6 +9,8 @@ var max_size = 10
 var hSpread = 400
 var cull = 0.5
 
+var path
+
 func _ready():
 	randomize()
 	make_rooms()
@@ -24,11 +26,16 @@ func make_rooms():
 	#wait for movement to stop
 	await(get_tree().create_timer(1.1).timeout)
 	#cull rooms
+	var room_positions = []
 	for room in $Rooms.get_children():
 		if randf() < cull:
 			room.queue_free()
 		else:
 			room.freeze = true
+			room_positions.append(Vector2(room.position.x, room.position.y))
+	await(get_tree().create_timer(1.1).timeout)
+	#generate minimum spanning tree
+	path = find_mst(room_positions)
 
 func _draw():
 	for room in $Rooms.get_children():
@@ -42,3 +49,29 @@ func _input(event):
 		for n in $Rooms.get_children():
 			n.queue_free()
 		make_rooms()
+
+func find_mst(nodes):
+	#Prim's algorithm
+	var path = AStar2D.new()
+	path.add_point(path.get_available_point_id(), nodes.pop_front())
+
+	#repeat until empty
+	while nodes:
+		var min_dist = INF
+		var min_p = null
+		var p = null
+		#loop through points
+		for p1 in path.get_point_ids():
+			p1 = path.get_point_position(p1)
+			#loop through the rest
+			for p2 in nodes:
+				if p1.distance_to(p2) < min_dist:
+					min_dist = p1.distance_to(p2)
+					min_p = p2
+					p = p1
+
+		var n = path.get_available_point_id()
+		path.add_point(n, min_p)
+		path.connect_points(path.get_closest_point(p), n)
+		nodes.erase(min_p)
+		
