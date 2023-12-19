@@ -39,7 +39,13 @@ func make_rooms():
 
 func _draw():
 	for room in $Rooms.get_children():
-		draw_rect(Rect2(room.position - room.size, room.size * 2), Color(32,228, 0), false)
+		draw_rect(Rect2(room.position - room.size, room.size * 2), Color(0,1, 0), false)
+	if path:
+		for p in path.get_point_ids():
+			for c in path.get_point_connections(p):
+				var pp = path.get_point_position(p)
+				var cp = path.get_point_position(c)
+				draw_line(pp, cp, color(1,1,0), 15, true)
 
 func _process(delta):
 	queue_redraw()
@@ -74,4 +80,4 @@ func find_mst(nodes):
 		path.add_point(n, min_p)
 		path.connect_points(path.get_closest_point(p), n)
 		nodes.erase(min_p)
-		
+	return path
