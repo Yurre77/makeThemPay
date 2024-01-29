@@ -1,15 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbt5spfjwal21"]
+[gd_scene load_steps=2 format=3 uid="uid://0os4xp81bd3f"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_mg0uc"]
 
-[node name="Main" type="Node2D"]
+[node name="main" type="Node"]
 script = ExtResource("1_mg0uc")
-
-[node name="Rooms" type="Node" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.1, 0.1)
-
-[node name="TileMap" type="TileMap" parent="."]
-rendering_quadrant_size = 32
-format = 2
