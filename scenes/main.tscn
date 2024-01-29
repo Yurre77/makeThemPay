@@ -11,5 +11,5 @@ script = ExtResource("1_mg0uc")
 zoom = Vector2(0.1, 0.1)
 
 [node name="TileMap" type="TileMap" parent="."]
-cell_quadrant_size = 32
+rendering_quadrant_size = 32
 format = 2
