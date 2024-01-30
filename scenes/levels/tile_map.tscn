@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwgi64j1n6mfc"]
+[gd_scene load_steps=5 format=3 uid="uid://cwgi64j1n6mfc"]
 
 [ext_resource type="Texture2D" uid="uid://dl5up6weixd0h" path="res://assets/surface.png" id="1_rvsfv"]
+[ext_resource type="Script" path="res://scripts/MapGeneration.gd" id="2_map42"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbtg6"]
 texture = ExtResource("1_rvsfv")
@@ -15,3 +16,4 @@ sources/1 = SubResource("TileSetAtlasSource_nbtg6")
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_fnqjy")
 format = 2
+script = ExtResource("2_map42")

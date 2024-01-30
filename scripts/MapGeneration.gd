@@ -6,3 +6,9 @@ extends TileMap
 @export var min_room_factor:float = 0.4
 
 enum Tiles {GROUND, TREE, WATER, ROOF}
+
+var tree = {}
+var leaves = []
+var leafid = 0
+var rooms = []
+
