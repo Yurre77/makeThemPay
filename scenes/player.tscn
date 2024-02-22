@@ -56,8 +56,6 @@ metadata/_edit_group_ = true
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ykt2k")
 animation = &"up"
-frame_progress = 0.0468802
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -0.5)
 shape = SubResource("CircleShape2D_2hubk")
