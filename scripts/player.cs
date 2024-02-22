@@ -34,9 +34,9 @@ public partial class player : Area2D
 
 		if(velocity.Length() > 0){
 			velocity = velocity.Normalized() * speed;
-			animatedSprite2D.Play("walk");
+			animatedSprite2D.Play();
 		} else {
-			animatedSprite2D.Play("default");
+			animatedSprite2D.Stop();
 		}
 
 		Position += velocity * (float)delta;
