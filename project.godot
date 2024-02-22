@@ -20,6 +20,10 @@ window/size/viewport_width=720
 window/size/viewport_height=480
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="makeThemPay"
+
 [input]
 
 move_up={
